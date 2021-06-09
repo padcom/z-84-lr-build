@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeta WingWing Z-84 Long Range build</title>
+</head>
+<body>
+  <h1>Zeta WingWing Z-84 Long-Range - the perfect long-range plane</h1>
+  <p>
+    For a few years I've been obsessed with exploring surrounding terrain from the air.
+    It's a fascinating experience to look at the earth from an altitude that blurs the details
+    of our daily live. Everything, every problem, every worry becomes so insignificant once
+    you're up there.
+  </p>
+  <p>
+    I don't have a pilot license, nor will I ever be able to acquire one. A, it is too expensive and B,
+    I am not that brave to actually put my well being in harms way like that. But that doesn't mean
+    I have to stop put pursuing my dream.
+  </p>
+
+  <h2>FPV to the rescue</h2>
+
+  <p>
+    Having the ability to see the image that an aircraft sees is for me a good enough substitute for
+    what I have been trying to achieve. In the past years the technology went so far that buying
+    a good enough hardware doesn't cost a small fortune and is accessible for mare mortals.
+  </p>
+
+  <p>
+    The basics are simple: you have a plane that has a camera with a video transmitter and on the ground
+    you have some sort of display (goggles, screen, laptop) with a video receiver that allows to observe
+    the image captured by the on-board camera. Most of the times it is a low-resolution, PAL or NTSC
+    video stream (comparable to VideoCD) but recently also high definition video links (such as DJI or
+    Fatshark Frost Byte) have become available.
+  </p>
+
+  <p>
+    The problem with higher quality is that it requires more power to operate and usually weighs more.
+    The more weight the less range on the same battery - so it is a trade-off between what you expect
+    the range to be and what quality you can achieve. I am more for long flights than super high quality
+    image. But that is my personal preference! Feel free to innovate on your design! That is what this
+    hobby is all about!
+  </p>
+
+  <h2>The shopping list</h2>
+
+  <p>
+    Let's be honest: the whole setup is not the cheapest thing you can invest in. What I have tried to do
+    is to go as low as possible without compromising the performance of the flying system. So what you
+    can see in the list below is the bare minimum that you can probably extend.
+
+    <ul>
+      <li>Zeta WingWing Z-84</li>
+      <li>Matek F405 WING</li>
+      <li>BN220 GPS</li>
+      <li>Crossfire mini TX</li>
+      <li>Crossfire nano RX</li>
+      <li>TBS MicroVEE 868MHz</li>
+      <li>TBS Diamond 868MHz (100zł)</li>
+      <li>Eachine TX801 VTx</li>
+      <li>Aomway Cloverleaf (need 2 pieces)</li>
+      <li>Eachine 1000TVL camera</li>
+      <li>Skyzone Cobra X (or any other goggles with a good sensitive receiver like RapidFIRE)</li>
+      <li>Aomway ANT009 dual diamond/biquad 13dBi</li>
+      <li>MD260 servo to pan the FPV camera</li>
+      <li>AX 1806n 2100kv</li>
+      <li>HakRC BLHeli32 35A ESC</li>
+      <li>APC 6x4 propeller</li>
+      <li>Propeller mount</li>
+      <li>4S Sanyo GA 3450mAh (need 4 pieces at the very minimum)</li>
+      <li>Silicone wires (18AWG, 24AWG, 30AWG with thin insulation for connecting the RC receiver and VTx)</li>
+      <li>Dupont connectors (3 pin and 4 pin)</li>
+      <li>Dupont connector crimper</li>
+      <li>XT-60 connector</li>
+      <li>2mm banana connectors (3x male+female)</li>
+      <li>1m carbon tube 4x3mm to replace the original plastic wing spar</li>
+      <li>Epoxy glue (e.g. Poxipol)</li>
+      <li>RC transmitter (e.g. Jumper T16, FrSky Taranis X9D) - anything that's advertised as 16 channels and runs OpenTX will do)</li>
+    </ul>
+
+    Ok, that was a lot of information! In the next section we'll break it down into more managable pieces
+    that will allow us to
+  </p>
+
+  <h2>The body</h2>
+
+  <p>
+    The body is the actual plane fuselage that will keep us in the air. It turns out that there is an
+    equilibrium between the size of the plane and the endurance (length of flight). A bigger plane will
+    not necessairly give you more flight time nor a better performance. Having tested the C1 Chaser body
+    (a fantastic plane!), FX-79 and Reptile S800 Sky Shadow I have to say the Z-84 strikes the perfect
+    ballance between wing span, weight and cargo bay capacity.
+  </p>
+
+  <h2>The radio control link</h2>
+
+  <p>
+    Ok, this one is interesting in the light of recent open-source development. For years there have been
+    just a few options to choose from: DragonLink, FrSky R9, TBS Crossfire and OpenLRS.
+    Of course there might have been others that I didn't mention but they were just not popular enough in
+    the hobby community because they were either not good enough or too expensive. However, being
+    the hub for innovation, a new open-source alternative has taken the scene with overwhelming force.
+    I am of course referring to the ExpressLRS RC link. It's fast, reliable, and all other kinds of
+    awesome. It's also way cheeper than the other commercial solutions, not to mention it works on both
+    2.4GHz as well as 868/915MHz for the extremely long flights.
+  </p>
+
+  <p>
+    A few years back I have heavily invested in TBS Crossfire so I'll stick with that. Feel free to use
+    whatever works best for you. The bare minimum you're going to need is a link that sends you back
+    the GPS coordinates (for finding your model if you crash-land in a place you didn't plan) and the
+    battery voltage. The voltage is not necessary but is quite helpful in long flights so you don't have
+    to constantly look at the OSD to know how much fuel you still have.
+  </p>
+
+  <h2>The video link</h2>
+
+  <p>
+    Now this is going to be controvesial like nothing else in the mix. I am going for a 5.8GHz link that
+    doesn't provide the longest range but works without additional hardware (such as filters).
+    To comfortably cruise beyond 10km from the starting point you'll need something that can transmit at
+    around 600mW. I have personaly flown a 600mW Eachine TX801 VTx to 21.5km and even though the video
+    was less than perfect it was good enough to figure out where I am and to read the OSD information.
+    I have also seen people punch the 30km mark on 5.8GHz so it is not like you need something super
+    special to get that far.
+  </p>
+
+  <p>
+    The general rule is this: if your video gets sketchy go up. From my experience going 350m above
+    the ground from where you take off is enough to provide a stable video at more than 20km. It does,
+    however, work the opposite as well: don't go too high if you're close to the place where you stand.
+    This will put you in a special dead spot and the reception will be very low. This happens because
+    the radiation pattern is more like a donut. That means that at the very bottom of the donut there
+    is a hole and if you're in that place there's nothing to receive (yes, even if you have a very good
+    directional antenna and you point it directly at the transmitter!)
+  </p>
+
+  <p>
+    I am obviously not going to go deep into how the radio transmission works. There are superb resources
+    on YouTube and other sites that will explain it better. All you need to know at this point is that
+    the further you go higher means more range (or at least that's what Trappy says :D).
+  </p>
+
+  <h2>The propulsion system</h2>
+
+  <p>
+    Something needs to push the plane forward. In the case of a flying wing it will be an electrical
+    engine that drives a propeller.
+  </p>
+
+  <p>
+    Back in the days in the RC hobby we used good old commutator motors. The reason was that those were
+    the only small enough motors that would fit in the plane. However, 3-phase engines, such as the ones
+    we have in the fridge, vaccum cleaner or other equipment delivers a much better performance. And when
+    I say "performance" I mean the amount of power needed to be used to drive the engine+propeller combo.
+  </p>
+
+  <p>
+    To drive a 3 phase motor you can't, unfortunately, just apply power to it. What you need is an
+    electronic speed controller (or ESC for short). Those building quads will know this topic way better
+    but for the purposes of this build any, and I mean <strong>any</strong> ESC will do. I have had some
+    high-tech BLheli_32 ESCs available so that is what I used. The point here is that it needs to be
+    able to handle abount 15A of power that the engine requires for the plane to take off and be as light
+    as possible. That's all.
+  </p>
+
+  <p>
+    Speaking of engine there's also a wide range of models to choose from. The main criteria for
+    long-range flights is efficiency. I have chosen the AX 1806n 2100kv with the 6x4 APC propeller.
+    This gives the Z-84 a cruise efficiency of about 50mAh per km which with a 4S Lion pack of 3500mAh
+    gives more than an hour of flight time. That in turn translates to at least 50km flight distance
+    which is more than enough to do a 20km out and back with a sizable margin for head/tail wind.
+  </p>
+
+  <h2>The brain</h2>
+
+  <p>
+    One of the more important things when flying long-range is the ability to fly the plane home
+    automatically if the control link fails of if you're lost and don't know where you are.
+    I won't lie to you: there are so many flight controllers out there it can make your head spin.
+    There are, however, a few that are especially designed for flying wings such as the Z-84.
+    The company that produces the best of those is Matek. I have flown pretty much every flight
+    controller from Matek and I can say with absolute certainty that the quality of them is very high.
+    None of my many flight controllers have failed me ever. I can't say the same thing about cheap
+    Chineese clones of Airbot AIO F4 controllers (they drop like flies!!!) or duplicates of the WING
+    series from Matek. If you're serious about security just go with Matek F405 WING - you can't
+    fail with that one.
+  </p>
+
+  <p>
+    The brain is also responsible of keeping your aircraft in the right altitude and on the course.
+    Without it it would be a constant battle against the wind which at the weight of ~500g is quite
+    a factor.
+  </p>
+
+  <h2>The things you wear</h2>
+
+  <p>
+    Fashion is important to many people. But fashion in the case of long-range FPV flights is less
+    of a question of what is trendy and more of a thing what is comfortable and performs well.
+    I am personaly a box goggles person. I hate the fact that getting binocular goggles to focus is
+    a practical impossibility for me. I used to have FatShark Dominator HDs, the best goggles (at one
+    point) on the market with 800x600 pixels resolution. However, at one point, I wanted to try out
+    those ugly and low-cost boxes and the moment I have put the Eachine EV800's on my head I was
+    completely sold! The size of the screen was <strong>HUMONGOUS</strong> by comparison, everything
+    was crispy clean and the overall immerive feeling was for me unbeatable. So the Fatsharks landed
+    deep in the drawer and I used those box goggles for a very long time. Not to mention the original
+    ImmersionRC receiver was just worse than the built-in one in EV800!
+  </p>
+
+  <p>
+    A few years later I have learned about this super-duper high-sensitivity RapidFIRE receiver for
+    FatSharks. As you can imagine I couldn't resist and I have had to get me one of theese. Well,
+    I have to tell you it does a really good job! It is one of those receivers that will blow your mind
+    when you switch from a regular non-diversity receivers. But the blury edges of FatSharks was just
+    not something I could handle. Even with a -2 correction lenses that make the screen smaller (sic!)
+    the edges were still not clean. The benefits (embedded VCR, head tracker) were still forcing me to
+    use them.
+  </p>
+
+  <p>
+    And then the Eachine/Skyzone Cobra X emerged. I think those are probably the best goggles ever
+    created: 800x400 16:9 screen, a much better VCR than the one from FatSharks (yes, even the latest
+    ones!!!), a very much comparable head tracker and a receiver that rivals the RapidFIRE - all for a
+    fraction of price you'd have to pay for HDO2's with RapidFIRE.
+  </p>
+
+  <p>
+    Since I bought the Cobra X goggles I have sold my FatShark HDs to someone who enjoys them very much.
+    But like I said - I am weird that way and I feel better with boxes than the super high-end hardware.
+    So if you're like me go with the Cobra X - you can't get better box goggles on the market for the
+    price and you will probably never want anything else.
+  </p>
+
+  <p>
+    A good pair of goggles and a good receiver is only half of the story. The other half, a much more
+    important one, are the antennas. There are two options depending on how far you want to go.
+    If you're more for the close range (&lt;500m) and low to the ground then a clover-leaf antenna will
+    serve you well. However, if you want to push the limits like I do then a directional antenna is
+    what you are going to need. I fly Aomway antennas all the way - from the VTx to the video receiver.
+    I just know that they are good wherever I buy them. I use two antennas: a circularly polarized
+    clover-leav antenna on the transmitter and on the receiver and a second directional antenna on the
+    receiver. There are two different directional antennas I have tried: Aomway 009 (13dBi dual-diamond
+    also known as biquad) and 14dBi patch. Both work very well for me but you should try them out yourself.
+    Your milage might vary. There's also a this super-duper company in Poland that produces great antennas
+    called Prodrone. They have both patch, dipoles, moxons and what have you. Definitely worth checking
+    out.
+  </p>
+
+  <h2>The things you control with</h2>
+
+  <p>
+    The controller is one of those things that you'll have the most problems choosing. And that for two
+    reasons: A it is an investment you don't want to make twice (because it is expensive) and B you will
+    have to select one that fits nicely in your hands. I am a proud owner of the old FrSky Taranis X9D and
+    Jumper T18 Pro (although that PRO version is a bit overpaid and if I would buy it now I'd just buy the
+    normal version - not the lite but just Jumper T18 without the PRO). Whatever you choose it is important
+    to get something that is advertised as 16 channel, uses OpenTX for firmware and has a module bay that
+    allows you to slide in the control link transmitter of your choosing. But beware: FrSky is one of those
+    (I don't want to use bad words but in this case I have to) fucked-up companies that will try to force
+    you to use their hardware and nothing else. So beware of QX7 or the new Taranis X9 lite controllers.
+    Those are a piece of crap and you should stay away from them at all cost. To be completely frank with
+    you, just stay away from FrSky gear. The politics and greed got the best of what used to be one of the
+    biggest brands on the market. If you want to go cheap then go with Jumper T18 or if you can aford it
+    go with Radiomaster T16s.
+  </p>
+
+  <h2>The build</h2>
+
+  <p>
+    Now that we have the hardware all discussed let's get to glueing stuff together. We will start by
+    assembling the motor mount. Before you apply glue on in it is kinda a good practice to roughen up
+    the plastic. This gives the glue more area to grip and since the original plastic is kina glossy it
+    improves the overall grip quite a bit. This is important since the engine is generating the most
+    vibrations and we don't want the engine to suddenly break out and fly away. I use a surgical scalpel
+    for all of the things I do during the build. It works very well and the blades are very easy to
+    replace once they get dull.
+  </p>
+
+  <p>
+    Then a do a preliminary fit to see if everything comes together as it should.
+  </p>
+
+  <p>
+    With that I am ready to apply the epoxy and glue the motor bed in with the EPP cover.
+  </p>
+
+  <p>
+    I usually apply way more glue than is needed and then clean off the excess. That way I know the glue
+    is all the way in in all spots.
+  </p>
+
+  <p>
+    This is something that I just do with all my Z-84's to help me mount the FPV camera. I use
+    <strong>fresh</strong> wallpaper knife to cut off the nose. This helps me to mount either the camera
+    or a mount for the servo (which is modeled after the camera) so that I can pan the FPV camera later
+    on.
+  </p>
+
+  <p>
+    Now that the nose is cut off I can take the surgical knife and create a hole big enough to fit the
+    camera. I could leave it with the camera as-is or mount the mount for servo. In this build I go with
+    the pan mechanism.
+  </p>
+
+  <p>
+    After the mount is glued in place I can make a hole in the rest of the nose to fit the remainder of
+    the mount.
+  </p>
+
+  <p>
+    With that in place I can now glue the nose back in so that the plane looks good.
+  </p>
+
+  <p>
+    Now it is time to mount the motor. It'll be difficult to do it once the flight controller is in.
+  </p>
+
+  <p>
+    The original mount for AX 1806n engine is a 3-point one whereas the Z-84 has a regular 4-point
+    mount used in small quads. To mitigate that I have this 3D model that I printed and fitted with
+    M3 insets that will allow me to easily put everything together.
+  </p>
+
+  <p>
+    I mounted the engine on just 2 screws. This should be more than enough. I use M3 screws I've got from
+    building a quad. Those are 10mm long and with a hex head. Very strong!
+  </p>
+
+  <p>
+    That'd be it for the fuselage - let's move into the wings.
+  </p>
+
+  <p>
+    This particualt Z-84 I was able to buy without any stickers. This is great as those stickets are
+    complately useless if you're beyond the line of sight and the lighter the model the better performance
+    you will get. So if your foam has any stickets - peel them off.
+  </p>
+
+  <p>
+    This is a good point to mention one very important flaw in the EPP material: it wears off if being
+    abused. To mitigate that on the hinges I applied a bit of hot glue and as it was still hot I have
+    cleaned it almost completely leaving just a thin film covering the entire area where the hinge is.
+    This will protect the area that gets stressed the most.
+  </p>
+
+  <p>
+    With that done I can now mount the servo. It is very important to first connect the servo to the
+    flight controller and center it so that when you glue it in you won't have to re-adjust it no more.
+    Repeat for the other wing.
+  </p>
+
+  <p>
+    That's pretty much it for the wings. It is time to glue the wings to the fuselage. Some Z-84s will
+    be just spot-on when you try to glue them, some will have a slight offset. Some might even have a dip
+    between the fuselage and the wing. Don't worry about it - it's normal. Later on we'll cover the
+    leading edge with clear or white packing tape and it won't really matter. Just make sure you get it
+    to fit as good as possible and you'll be all good.
+  </p>
+
+  <p>
+    The original plane comes with a plastic wing spar. It's heavy and flexible - both of which is bad.
+    I use a 4x3mm carbon tube instead. You can buy them in 1m long pieces. Just cut it to length (in my
+    case it was 45.5cm) and you'll be much better off with it than with the plastic piece of crap.
+  </p>
+
+  <p>
+    Now here comes my least favorite part of the build - glueing the wing spar. I don't like it because
+    you have to work relatively fast and on your laps to keep the wing straight. What I do is I apply the
+    epoxy glue into the slot, then keeping the carbon tube as up as possible I slide it in and while holding
+    the plane on my laps I press the tube down into the slot. It does get messy! I always get my hards dirty
+    with the glue. But hey, it's just that one thing - you can live with it :)
+  </p>
+
+  <p>
+    Now let it rest for at least 30 minutes so that both the spar and the wings are properly glued
+    together.
+  </p>
+
+  <p>
+    Now it is time to mount the flight controller to the board. To do it I use plastic M3 distances that
+    I bought on AliExpress. If you'll buy them in a set use the shortest ones - antything longer and
+    you'll have trouble closing the lid on the plane.
+  </p>
+
+  <p>
+    First I screw them to the flight controller. With that in place I place the FC in the spot that I'd
+    like it to fit and press gently downwards. This leaves the marks in spots where the mounts should fit.
+  </p>
+
+  <p>
+    Then I use either a toothpick or a small screwdriver to poke holes that the mounting poles will go
+    into.
+  </p>
+
+  <p>
+    If everything fits I apply some epoxy and put the flight controller with the poles into the holes.
+    It is important to verify that all the plastic poles are equally deep into the fuselage or else
+    the whole thing will be skewed and won't work as intended.
+  </p>
+
+  <p>
+    Then I connect the ESC with the motor.
+  </p>
+
+  <p>
+    Here's a bit of a snag that you need to be aware of. The original hatch is designed for wing spar
+    that is thinner than 4mm. I think it is originally 3.5mm or there about. This means that the hatch
+    will break very soon. For that reason I just don't use the supplied hatch at all. I mount the top
+    cover on a piece of tape which provides a much more robust and safe way to cover the electronics.
+  </p>
+
+
+</body>
+</html>
